@@ -4,50 +4,47 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-     <link rel="manifest" href="/manifest.json">
-     <link rel="apple-touch-icon" href="/icons/icon-128x128.png">
-     <meta name="theme-color" content="#ffffff">
+    <link rel="manifest" href="/manifest.json">
+    <link rel="apple-touch-icon" href="/icons/icon-128x128.png">
+    <meta name="theme-color" content="#ffffff">
+
+    <link rel="stylesheet" href="assets/css/common.css">
+    <script src="assets/js/common.js" defer></script>
+
+    <link rel="stylesheet" href="assets/css/chatting.css">
+    <script src="assets/js/chatting.js" defer></script>
 
     <title>Chatting room</title>
 </head>
 <body>
-    <div>
-        <a href="index.html">돌아가기</a><h1>Sample</h1>
+    <div class="topbar">
+        <a href="index.html">Back</a><h1>Chatting</h1>
     </div>
-    <div>
-        <div>
-            <h3>nickname1</h3>
-            <p>message1</p>
+    <div class="body">
+        <!-- <div>
+            <h3>nickname</h3>
+            <p>
+                <a href="imgur_url"><img src="imgur_url" alt="imgur_url"></a>
+                <br>
+                message
+            </p>
             <details>
                 <summary>delete</summary>
-                <form action="">
-                    <input type="password" placeholder="password">
-                    <input type="submit">
+                <form action="http://y0rfa1se.iptime.org/chatting/delete" method="post">
+                    <input type="hidden" name="index" value="0">
+                    <input type="password" name="password" placeholder="password">
+                    <input type="submit" onsubmit="body_load()">
                 </form>
             </details>
-        </div>
-        <div>
-            <h3>nickname2</h3>
-            <p>message2</p>
-            <details>
-                <summary>delete</summary>
-                <form action="">
-                    <input type="password" placeholder="password">
-                    <input type="submit">
-                </form>
-            </details>
-        </div>
+        </div> -->
     </div>
-    <div>
-        <form action="">
-            <input type="text" placeholder="nickname">
-            <input type="password" placeholder="password">
-            <details>
-                <summary>image</summary>
-                <input type="file" accept="image/*">
-            </details>
-            <input type="text">
-            <input type="submit" value="send">
+    <div class="input">
+        <form action="http://y0rfa1se.iptime.org/chatting/send" method="post" enctype="multipart/form-data">
+            <input type="text" name="nickname "placeholder="nickname">
+            <input type="password" name="password" placeholder="password">
+            <input type="file" name="image" accept="image/*">
+            <input type="text" name="content">
+            <input type="submit" value="send" onsubmit="body_load()">
         </form>
     </div>
 </body>

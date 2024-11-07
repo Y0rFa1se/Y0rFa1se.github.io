@@ -4,21 +4,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="manifest" href="../manifest.json">
-    <link rel="apple-touch-icon" href="../icons/icon-128x128.png">
+    <link rel="manifest" href="../../manifest.json">
+    <link rel="apple-touch-icon" href="../../icons/icon-128x128.png">
     <meta name="theme-color" content="#ffffff">
 
-    <link rel="stylesheet" href="../assets/css/common.css">
-    <script src="../assets/js/common.js" defer></script>
+    <link rel="stylesheet" href="../../assets/css/common.css">
+    <script src="../../assets/js/common.js" defer></script>
 
-    <link rel="stylesheet" href="../assets/css/chatting.css">
-    <script src="../assets/js/chatting.js" defer></script>
+    <link rel="stylesheet" href="../../assets/css/message.css">
+    <script src="../../assets/js/message.js" defer></script>
 
-    <title>Chatting room</title>
+    <title>Messages</title>
 </head>
 <body>
     <div class="topbar">
-        <a href="javascript:history.back()">Back</a><h1>Chatting</h1>
+        <a href="javascript:history.back()">Back</a><h1>Message</h1>
     </div>
     <div class="body">
         <!-- <div>
@@ -39,7 +39,7 @@
         </div> -->
     </div>
     <div class="input">
-        <form action="http://y0rfa1se.iptime.org:8000/chatting/send" method="post" enctype="multipart/form-data">
+        <form>
             <input type="text" name="nickname"placeholder="nickname" required>
             <input type="password" name="password" placeholder="password" required>
             <input type="text" name="content" required>

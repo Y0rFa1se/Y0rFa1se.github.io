@@ -6,14 +6,14 @@ app = FastAPI()
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],  # 모든 출처에서의 요청을 허용합니다. 보안을 위해 특정 출처만 허용할 수도 있습니다.
+    allow_origins=["*"],
     allow_credentials=True,
-    allow_methods=["*"],  # 모든 HTTP 메서드를 허용합니다.
-    allow_headers=["*"],  # 모든 헤더를 허용합니다.
+    allow_methods=["*"],
+    allow_headers=["*"],
 )
 
-@app.post("/chatting/send")
-async def get_chatting(
+@app.post("/message/post")
+async def get_message(
     nickname: str = Form(...),
     password: str = Form(...),
     content: str = Form(...),
@@ -26,4 +26,3 @@ async def get_chatting(
         print(nickname, password, content)
 
     return {"status": "success"}
-    # return {"status": "failed"}

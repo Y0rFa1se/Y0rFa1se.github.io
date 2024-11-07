@@ -11,7 +11,7 @@ async function template_message(message) {
     <details>
         <summary>delete</summary>
         <form onsubmit="delete_request(event)">
-            <input type="hidden" name="index" value="${message.idx}">
+            <input type="hidden" name="idx" value="${message.idx}">
             <input type="password" name="password" placeholder="password">
             <input type="submit">
         </form>
@@ -29,7 +29,7 @@ async function template_message(message) {
     <details>
         <summary>delete</summary>
         <form onsubmit="delete_request(event)">
-            <input type="hidden" name="index" value="${message.idx}">
+            <input type="hidden" name="idx" value="${message.idx}">
             <input type="password" name="password" placeholder="password">
             <input type="submit">
         </form>
@@ -119,20 +119,19 @@ async function delete_request(event) {
             method: 'POST',
             body: formData
         });
-    
+
         if (!response.ok) {
             throw new Error(`Server response error: ${response.status}`);
         }
 
-        const data = await response.json();
+        const responseData = await response.json();
 
-        if (data.status === 'success') {
-            console.log('Form submitted successfully:', data);
-            window.location.href = window
-
+        if (responseData.status === 'success') {
+            console.log('Message deleted successfully');
+            window.location.href = window.location.href;
         } else {
-            console.error('Form submission failed:', data);
-            alert('Failed to submit the form. Please try again.');
+            console.error('Failed to delete the message:', responseData);
+            alert('Failed to delete the message. Please try again.');
         }
 
     } catch (error) {
@@ -140,6 +139,7 @@ async function delete_request(event) {
         alert('Server error. Please try again later.');
     }
 }
+
 
 window.onload = async function() {
     await body_load();

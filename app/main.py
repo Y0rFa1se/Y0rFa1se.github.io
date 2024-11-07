@@ -36,7 +36,7 @@ async def post_message(
 
 @app.post("/message/delete")
 async def delete_message(
-    idx: int = Form(...),
+    idx: str = Form(...),
     password: str = Form(...)
 ):
     print(idx, password)

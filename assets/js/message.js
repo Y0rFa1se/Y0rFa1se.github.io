@@ -1,42 +1,67 @@
-function body_load() {
-    return true;
+async function body_load() {
+    try {
+        const response = await fetch('http://y0rfa1se.iptime.org:8000/message/get');
+        
+        if (!response.ok) {
+            throw new Error(`HTTP error! Status: ${response.status}`);
+        }
+        
+        const data = await response.json();
+        
+        console.log('Received data:', data);
+
+        return data;
+    } catch (error) {
+        console.error('Request failed', error);
+        alert('Failed to load data.');
+
+        return null;
+    }
 }
 
-function send(event) {
+async function send(event) {
     event.preventDefault();
     
     const form = document.querySelector('.input form');
     const formData = new FormData(form);
 
-    fetch('http://y0rfa1se.iptime.org:8000/message/post', {
-        method: 'POST',
-        body: formData
-    })
-    .then(response => {
+    try {
+        const response = await fetch('http://y0rfa1se.iptime.org:8000/message/post', {
+            method: 'POST',
+            body: formData
+        });
+
         if (!response.ok) {
-            throw new Error('Server response error:', response);
+            throw new Error(`Server response error: ${response.status}`);
         }
-        return response.json();
-    })
-    .then(data => {
-        console.log(data);
-        
+
+        const data = await response.json();
+
         if (data.status === 'success') {
-            console.log('form submitted:', data);
+            console.log('Form submitted successfully:', data);
             window.location.href = window.location.href;
         } else {
-            console.error('form is not submitted', data);
+            console.error('Form submission failed:', data);
             alert('Failed to submit the form. Please try again.');
         }
-    })
-    .catch(error => {
-        console.error('server error', error);
-        alert('Server error. Please try again later.');
-    });
 
-    body_load();
+    } catch (error) {
+        console.error('Server error:', error);
+        alert('Server error. Please try again later.');
+    }
+ㅂ
+    await body_load();
 }
 
 document.querySelector('.input form').addEventListener('submit', function(event) {
     send(event);
 });
+
+window.onload = async function() {
+    const data = await body_load();
+
+    if (data === null) {
+        alert('Returning to the previous page.');
+        window.history.back();
+    }
+};

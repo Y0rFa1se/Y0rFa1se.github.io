@@ -12,6 +12,10 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
+@app.get("/message/get")
+async def get_message():
+    return {"status": "success"}
+
 @app.post("/message/post")
 async def get_message(
     nickname: str = Form(...),

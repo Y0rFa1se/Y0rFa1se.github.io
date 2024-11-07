@@ -1,22 +1,42 @@
-async function template_message(idx, nickname, imgur_url, content) {
-    return `
+async function template_message(message) {
+    if (message.has_image) {
+        return `
 <div>
-    <h3>${nickname}</h3>
+    <h3>${message.nickname}</h3>
     <p>
-        <a href="${imgur_url}"><img src="${imgur_url}" alt="${imgur_url}"></a>
+        <a href="${message.imgur_url}"><img src="${message.imgur_url}" alt="${message.imgur_url}"></a>
         <br>
-        ${content}
+        ${message.content}
     </p>
     <details>
         <summary>delete</summary>
-        <form onsubmit="">
-            <input type="hidden" name="index" value="${idx}">
+        <form onsubmit="delete_request(event)">
+            <input type="hidden" name="index" value="${message.idx}">
+            <input type="password" name="password" placeholder="password">
+            <input type="submit">
+        </form>
+    </details>
+</div>
+`
+
+    } else {
+        return `
+<div>
+    <h3>${message.nickname}</h3>
+    <p>
+        ${message.content}
+    </p>
+    <details>
+        <summary>delete</summary>
+        <form onsubmit="delete_request(event)">
+            <input type="hidden" name="index" value="${message.idx}">
             <input type="password" name="password" placeholder="password">
             <input type="submit">
         </form>
     </details>
 </div>
 `;
+    }
 }
 
 async function body_load() {
@@ -49,7 +69,7 @@ async function draw_page(data) {
         const imgur_url = message.imgur_url;
         const content = message.content;
 
-        const html = await template_message(idx, nickname, imgur_url, content);
+        const html = await template_message(message);
         document.querySelector('.body').innerHTML += html;
     }
 }
@@ -119,8 +139,6 @@ async function delete_request(event) {
         console.error('Server error:', error);
         alert('Server error. Please try again later.');
     }
-
-    await body_load();
 }
 
 window.onload = async function() {

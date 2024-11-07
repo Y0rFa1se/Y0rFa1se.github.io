@@ -14,10 +14,13 @@ app.add_middleware(
 
 @app.get("/message/get")
 async def get_message():
-    return {"status": "success"}
+    return [
+        {"idx": 0, "nickname": "test1", "content": "test1", "has_image": False},
+        {"idx": 1, "nickname": "test2", "content": "test2", "has_image": True, "image": "link.png"},
+    ]
 
 @app.post("/message/post")
-async def get_message(
+async def post_message(
     nickname: str = Form(...),
     password: str = Form(...),
     content: str = Form(...),
@@ -29,4 +32,12 @@ async def get_message(
     else:
         print(nickname, password, content)
 
+    return {"status": "success"}
+
+@app.post("/message/delete")
+async def delete_message(
+    idx: int = Form(...),
+    password: str = Form(...)
+):
+    print(idx, password)
     return {"status": "success"}

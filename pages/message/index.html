@@ -21,25 +21,10 @@
         <a href="javascript:history.back()">Back</a><h1>Message</h1>
     </div>
     <div class="body">
-        <!-- <div>
-            <h3>nickname</h3>
-            <p>
-                <a href="imgur_url"><img src="imgur_url" alt="imgur_url"></a>
-                <br>
-                message
-            </p>
-            <details>
-                <summary>delete</summary>
-                <form action="http://y0rfa1se.iptime.org/chatting/delete" method="post">
-                    <input type="hidden" name="index" value="0">
-                    <input type="password" name="password" placeholder="password">
-                    <input type="submit" onsubmit="body_load()">
-                </form>
-            </details>
-        </div> -->
+        
     </div>
     <div class="input">
-        <form>
+        <form onsubmit="post(event)">
             <input type="text" name="nickname"placeholder="nickname" required>
             <input type="password" name="password" placeholder="password" required>
             <input type="text" name="content" required>

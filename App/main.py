@@ -15,3 +15,5 @@ async def get_chatting(
     
     else:
         print(nickname, password, content)
+
+    return {"status": "success"}

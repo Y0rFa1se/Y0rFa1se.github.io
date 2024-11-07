@@ -16,7 +16,7 @@ app.add_middleware(
 async def get_message():
     return [
         {"idx": 0, "nickname": "test1", "content": "test1", "has_image": False},
-        {"idx": 1, "nickname": "test2", "content": "test2", "has_image": True, "image": "https://imgur.com/a/vqGe6Gt.jpeg"},
+        {"idx": 1, "nickname": "test2", "content": "test2", "has_image": True, "image": "https://imgur.com/GVL5n9U.jpg"},
     ]
 
 @app.post("/message/post")

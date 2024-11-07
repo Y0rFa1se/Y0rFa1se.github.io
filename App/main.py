@@ -1,4 +1,5 @@
 from fastapi import FastAPI, Form, File, UploadFile
+from typing import Optional
 
 app = FastAPI()
 
@@ -7,6 +8,10 @@ async def get_chatting(
     nickname: str = Form(...),
     password: str = Form(...),
     content: str = Form(...),
-    image: UploadFile = File(...)
+    image: Optional[UploadFile] = File(None)
 ):
-    print(nickname, password, content, image)
+    if image:
+        print(nickname, password, content, image.filename)
+    
+    else:
+        print(nickname, password, content)

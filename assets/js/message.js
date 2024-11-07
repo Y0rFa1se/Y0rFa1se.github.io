@@ -4,7 +4,7 @@ async function template_message(message) {
 <div>
     <h3>${message.nickname}</h3>
     <p>
-        <a href="${message.imgur_url}"><img src="${message.imgur_url}" alt="${message.imgur_url}"></a>
+        <a href="${message.image}"><img src="${message.image}" alt="${message.image}"></a>
         <br>
         ${message.content}
     </p>

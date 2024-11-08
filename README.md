@@ -1,1 +1,1 @@
-# [Github Pages Link](https://y0rfa1se.github.io) ([Backend Repository](https://github.com/Y0rFa1se/ghp_backend))
+# [Github Pages Link](https://y0rfa1se.github.io)

@@ -104,7 +104,7 @@ async function post(event) {
         console.error('Server error:', error);
         alert('Server error. Please try again later.');
     }
-ㅂ
+
     await body_load();
 }
 

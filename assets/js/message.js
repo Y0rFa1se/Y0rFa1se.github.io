@@ -41,7 +41,7 @@ async function template_message(message) {
 
 async function body_load() {
     try {
-        const response = await fetch('https://y0rfa1se.iptime.org/message/get');
+        const response = await fetch('https://y0rfa1se.duckdns.org/message/get');
         
         if (!response.ok) {
             throw new Error(`HTTP error! Status: ${response.status}`);
@@ -81,7 +81,7 @@ async function post(event) {
     const formData = new FormData(form);
 
     try {
-        const response = await fetch('https://y0rfa1se.iptime.org/message/post', {
+        const response = await fetch('https://y0rfa1se.duckdns.org/message/post', {
             method: 'POST',
             body: formData
         });
@@ -115,7 +115,7 @@ async function delete_request(event) {
     const formData = new FormData(form);
 
     try {
-        const response = await fetch('https://y0rfa1se.iptime.org/message/delete', {
+        const response = await fetch('https://y0rfa1se.duckdns.org/message/delete', {
             method: 'POST',
             body: formData
         });

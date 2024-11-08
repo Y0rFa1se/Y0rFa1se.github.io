@@ -2,6 +2,9 @@ from fastapi import FastAPI, Form, File, UploadFile
 from fastapi.middleware.cors import CORSMiddleware
 from typing import Optional
 
+from modules.api import imgur_upload
+from modules.database import get_latest_msg, save_msg, find_msg, delete_msg
+
 app = FastAPI()
 
 app.add_middleware(
@@ -13,11 +16,8 @@ app.add_middleware(
 )
 
 @app.get("/message/get")
-async def get_message():
-    return [
-        {"idx": 0, "nickname": "test1", "content": "test1", "has_image": False},
-        {"idx": 1, "nickname": "test2", "content": "test2", "has_image": True, "image": "https://imgur.com/GVL5n9U.jpg"},
-    ]
+async def get_message(start_idx):
+    return get_lastest_msg(start_idx)
 
 @app.post("/message/post")
 async def post_message(
@@ -26,11 +26,8 @@ async def post_message(
     content: str = Form(...),
     image: Optional[UploadFile] = File(None)
 ):
-    if image:
-        print(nickname, password, content, image.filename)
-    
-    else:
-        print(nickname, password, content)
+    link = imgur_upload(image)
+    save_msg(nickname, password, content, image, link)
 
     return {"status": "success"}
 
@@ -39,5 +36,11 @@ async def delete_message(
     idx: str = Form(...),
     password: str = Form(...)
 ):
-    print(idx, password)
-    return {"status": "success"}
+    cur = find_msg(idx, password)
+    if (cur):
+        delete_msg(cur)
+        
+        return {"status": "success"}
+    else:
+        return {"status": "failed to find message"}
+    

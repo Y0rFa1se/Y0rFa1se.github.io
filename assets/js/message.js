@@ -1,3 +1,5 @@
+let start_msg_idx = 0;
+
 async function template_message(message) {
     if (message.has_image) {
         return `
@@ -41,7 +43,7 @@ async function template_message(message) {
 
 async function body_load() {
     try {
-        const response = await fetch('https://y0rfa1se.duckdns.org/message/get');
+        const response = await fetch('https://y0rfa1se.duckdns.org/message/get?start_idx=${start_msg_idx}');
         
         if (!response.ok) {
             throw new Error(`HTTP error! Status: ${response.status}`);
@@ -49,8 +51,10 @@ async function body_load() {
         
         const data = await response.json();
         
-        console.log('Received data:', data);
+        start_msg_idx += 5;
+        console.log(start_msg_idx);
 
+        console.log('Received data:', data);
         draw_page(data);
 
         return true;
@@ -63,14 +67,12 @@ async function body_load() {
 }
 
 async function draw_page(data) {
-    for (const message of data) {
-        const idx = message.idx;
-        const nickname = message.nickname;
-        const imgur_url = message.imgur_url;
-        const content = message.content;
+    const button = document.querySelector('.see_more');
 
+    for (const message of data) {
         const html = await template_message(message);
-        document.querySelector('.body').innerHTML += html;
+        
+        button.insertAdjacentHTML('afterend', html);
     }
 }
 

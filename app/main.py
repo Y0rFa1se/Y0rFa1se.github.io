@@ -1,10 +1,9 @@
 from dotenv import dotenv_values
-
 from fastapi import FastAPI, Form, File, UploadFile
 from fastapi.middleware.cors import CORSMiddleware
 from typing import Optional
 
-from modules.api import imgur_upload
+from modules.imgur_api import imgur_upload
 from modules.database import get_latest_msg, save_msg, find_msg, delete_msg
 
 env_dict = dotenv_values(".env")

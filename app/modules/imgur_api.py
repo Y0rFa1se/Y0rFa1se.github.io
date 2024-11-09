@@ -4,6 +4,7 @@ def imgur_upload(image, client_id: str) -> dict:
     """
     status: success, no image, failed to upload image
     """
+    
     if (image == None):
         return {"status": "no image", "link": None}
     

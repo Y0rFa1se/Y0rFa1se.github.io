@@ -32,4 +32,5 @@ def find_msg(idx: str, password: str) -> dict:
 
 def delete_msg(cur) -> dict:
     """cursor 입력받아서 삭제 후 status(dict) 반환"""
+    
     pass

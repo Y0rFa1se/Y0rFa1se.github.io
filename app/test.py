@@ -8,7 +8,7 @@ from modules.api import imgur_upload
 
 env_dict = dotenv_values(".env")
 
-print(env_dict)
+print(env_dict["IMGUR_CLIENT_ID"])
 
 app = FastAPI()
 

@@ -27,4 +27,6 @@ async def post_message(
 ):
     link = imgur_upload(image, env_dict["IMGUR_CLIENT_ID"])
 
+    print(link)
+
     return {"status": "success", "link": link}

@@ -1,1 +1,1 @@
-const API_URL = "https://y0rfa1se.duckdns.org/";
+const API_URL = "https://y0rfa1se.duckdns.org";

@@ -32,3 +32,7 @@ async def post_message(
     print(link)
 
     return {"status": "success", "link": link}
+
+@app.get("/message/get")
+async def get_message(start_idx):
+    print(start_idx)

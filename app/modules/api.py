@@ -15,6 +15,6 @@ def imgur_upload(image, client_id: str) -> str:
     )
 
     if (response.status_code == 200):
-        return response.json()["data"]["link"]
+        return {"status": "success", "link": response.json()["data"]["link"]}
     
     return {"status": "failed to upload image", "link": None}

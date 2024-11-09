@@ -1,5 +1,6 @@
 requests
 python-dotenv
+bcrypt
 uvicorn
 fastapi
 python-multipart

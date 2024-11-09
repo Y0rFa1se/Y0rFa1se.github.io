@@ -1,6 +1,6 @@
 import requests
 
-def imgur_upload(image: UploadFile, client_id: str) -> str:
+def imgur_upload(image, client_id: str) -> str:
     if (image == None):
         return {"status": "no image", "link": None}
     

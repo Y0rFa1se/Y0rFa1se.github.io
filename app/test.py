@@ -8,6 +8,8 @@ from modules.api import imgur_upload
 
 env_dict = dotenv_values(".env")
 
+print(env_dict)
+
 app = FastAPI()
 
 app.add_middleware(

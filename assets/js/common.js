@@ -1,0 +1,1 @@
+let API_URL = "https://y0rfa1se.duckdns.org/";

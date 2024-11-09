@@ -1,1 +1,4 @@
+app/.env
+
+app/__pycache__
 app/test.py

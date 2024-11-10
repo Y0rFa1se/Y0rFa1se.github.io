@@ -6,7 +6,7 @@ def imgur_upload(image, client_id: str) -> dict:
     """
     
     if (image == None):
-        return {"status": "no image", "link": None}
+        return ""
     
     headers = {
         "Authorization": f"Client-ID {client_id}"
@@ -19,6 +19,6 @@ def imgur_upload(image, client_id: str) -> dict:
     )
 
     if (response.status_code == 200):
-        return {"status": "success", "link": response.json()["data"]["link"]}
+        return response.json()["data"]["link"]
     
-    return {"status": "failed to upload image", "link": None}
+    return ""

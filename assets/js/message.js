@@ -6,7 +6,7 @@ async function template_message(message) {
 <div>
     <h3>${message.nickname}</h3>
     <p>
-        <a href="${message.image}"><img src="${message.image}" alt="${message.image}"></a>
+        <a href="${message.link}"><img src="${message.link}" alt="${message.link}"></a>
         <br>
         ${message.content}
     </p>

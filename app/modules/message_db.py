@@ -10,7 +10,7 @@ def message_db_init():
 
     cursor.execute('''
     CREATE TABLE IF NOT EXISTS messages (
-        index INTEGER PRIMARY KEY AUTOINCREMENT,
+        idx INTEGER PRIMARY KEY AUTOINCREMENT,
         datetime TEXT NOT NULL,
         nickname TEXT NOT NULL,
         password TEXT NOT NULL,
@@ -33,7 +33,7 @@ def get_latest_msg(cursor, start_idx: int) -> dict:
     query = f"""
     SELECT * FROM messages
     WHERE deleted = 0
-    ORDER BY index DESC
+    ORDER BY idx DESC
     LIMIT 10
     OFFSET {start_idx}"""
 
@@ -60,7 +60,7 @@ def find_msg(cursor, idx: str) -> dict:
     
     query = f"""
     SELECT * FROM messages
-    WHERE index = {idx}
+    WHERE idx = {idx}
     """
 
     cursor.execute(query)
@@ -81,7 +81,7 @@ def delete_msg(cursor, idx: str) -> dict:
     query = f"""
     UPDATE messages
     SET deleted = 1
-    WHERE index = {idx}
+    WHERE idx = {idx}
     """
 
     cursor.execute(query)

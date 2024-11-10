@@ -144,5 +144,6 @@ async function delete_request(event) {
 
 
 window.onload = async function() {
+    start_msg_idx = 0;
     await body_load();
 };

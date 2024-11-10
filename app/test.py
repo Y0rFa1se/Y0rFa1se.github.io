@@ -1,3 +1,5 @@
+from datetime import datetime
+
 from dotenv import dotenv_values
 from fastapi import FastAPI, Form, File, UploadFile
 from fastapi.middleware.cors import CORSMiddleware
@@ -34,7 +36,10 @@ async def post_message(
 ):
     link = imgur_upload(image, env_dict["IMGUR_CLIENT_ID"])
     password = hash_password(password)
-    save_msg(cursor, nickname, password, content, image!=None, link)
+
+    current_time = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+
+    save_msg(cursor, current_time, nickname, password, content, image!=None, link)
 
     return {"status": "success"}
 

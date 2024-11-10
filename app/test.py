@@ -6,7 +6,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from typing import Optional
 
 from modules.hash import hash_password, check_password
-from modules.message_db import message_db_init, get_latest_msg, save_msg, delete_msg
+from modules.message_db import message_db_init, get_latest_msg, get_password, save_msg, delete_msg
 from modules.imgur_api import imgur_upload
 
 env_dict = dotenv_values(".env")
@@ -48,7 +48,9 @@ async def delete_message(
     idx: str = Form(...),
     password: str = Form(...)
 ):
-    if (check_password(cursor, idx, password)):
+    hashed_password = get_password(cursor, idx)
+
+    if (check_password(password, hashed_password)):
         res = delete_msg(cursor, idx)
 
         if res['status'] == "success":

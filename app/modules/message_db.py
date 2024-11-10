@@ -31,13 +31,13 @@ def get_latest_msg(cursor, start_idx: int) -> dict:
     """
 
     query = f"""
-    SELECT * FROM messages
+    SELECT idx, datetime, nickname, content, has_image, link FROM messages
     WHERE deleted = 0
     ORDER BY idx DESC
     LIMIT 10
-    OFFSET {start_idx}"""
+    OFFSET ?"""
 
-    cursor.execute(query)
+    cursor.execute(query, (start_idx,))
     res = [dict(row) for row in cursor.fetchall()]
     res = res if res else []
 
@@ -53,6 +53,17 @@ def save_msg(cursor, datetime: str, nickname: str, password: str, content: str, 
 
     return {"status": "success"}
 
+def get_password(cursor, idx: str) -> str:
+    query = f"""
+    SELECT password FROM messages
+    WHERE idx = ?
+    """
+
+    cursor.execute(query, (idx,))
+    res = cursor.fetchone()
+
+    return res[0]
+
 def find_msg(cursor, idx: str) -> dict:
     """
     status, cursor포함한 dict 반환
@@ -60,17 +71,16 @@ def find_msg(cursor, idx: str) -> dict:
     
     query = f"""
     SELECT * FROM messages
-    WHERE idx = {idx}
+    WHERE idx = ?
     """
 
-    cursor.execute(query)
+    cursor.execute(query, (idx,))
     res = cursor.fetchone()
 
     if res:
         return {"status": "success", "message": dict(res)}
     
     return {"status": "failed to find message"}
-
 
 def delete_msg(cursor, idx: str) -> dict:
     """cursor 입력받아서 삭제 후 status(dict) 반환"""
@@ -81,9 +91,9 @@ def delete_msg(cursor, idx: str) -> dict:
     query = f"""
     UPDATE messages
     SET deleted = 1
-    WHERE idx = {idx}
+    WHERE idx = ?
     """
 
-    cursor.execute(query)
+    cursor.execute(query, (idx,))
 
     return {"status": "success"}

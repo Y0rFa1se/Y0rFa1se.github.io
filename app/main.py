@@ -1,12 +1,17 @@
+from datetime import datetime
+
 from dotenv import dotenv_values
 from fastapi import FastAPI, Form, File, UploadFile
 from fastapi.middleware.cors import CORSMiddleware
 from typing import Optional
 
+from modules.hash import hash_password, check_password
+from modules.message_db import message_db_init, get_latest_msg, get_password, save_msg, delete_msg
 from modules.imgur_api import imgur_upload
-from modules.message_db import get_latest_msg, save_msg, find_msg, delete_msg
 
 env_dict = dotenv_values(".env")
+
+cursor = message_db_init()
 
 app = FastAPI()
 
@@ -20,7 +25,7 @@ app.add_middleware(
 
 @app.get("/message/get")
 async def get_message(start_idx):
-    return get_latest_msg(start_idx)
+    return get_latest_msg(cursor, start_idx)
 
 @app.post("/message/post")
 async def post_message(
@@ -30,7 +35,11 @@ async def post_message(
     image: Optional[UploadFile] = File(None)
 ):
     link = imgur_upload(image, env_dict["IMGUR_CLIENT_ID"])
-    save_msg(nickname, password, content, image, link)
+    password = hash_password(password)
+
+    current_time = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+
+    save_msg(cursor, current_time, nickname, password, content, link!="", link)
 
     return {"status": "success"}
 
@@ -39,11 +48,12 @@ async def delete_message(
     idx: str = Form(...),
     password: str = Form(...)
 ):
-    cur = find_msg(idx, password)
-    if (cur):
-        delete_msg(cur)
-        
-        return {"status": "success"}
-    else:
-        return {"status": "failed to find message"}
-    
+    hashed_password = get_password(cursor, idx)
+
+    if (check_password(password, hashed_password)):
+        res = delete_msg(cursor, idx)
+
+        if res['status'] == "success":
+            return {"status": "success"}
+
+        return {"status": "failed to delete message"}

@@ -11,7 +11,7 @@ from modules.imgur_api import imgur_upload
 
 env_dict = dotenv_values(".env")
 
-conn, cursor = message_db_init()
+cursor = message_db_init()
 
 app = FastAPI()
 
@@ -25,11 +25,7 @@ app.add_middleware(
 
 @app.get("/message/get")
 async def get_message(start_idx):
-    res = get_latest_msg(conn, cursor, start_idx)
-
-    conn, cursor = message_db_init()
-
-    return res
+    return get_latest_msg(cursor, start_idx)
 
 @app.post("/message/post")
 async def post_message(
@@ -43,9 +39,7 @@ async def post_message(
 
     current_time = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
 
-    save_msg(conn, cursor, current_time, nickname, password, content, link!="", link)
-
-    conn, cursor = message_db_init()
+    save_msg(cursor, current_time, nickname, password, content, link!="", link)
 
     return {"status": "success"}
 
@@ -54,14 +48,10 @@ async def delete_message(
     idx: str = Form(...),
     password: str = Form(...)
 ):
-    hashed_password = get_password(conn, cursor, idx)
-
-    conn, cursor = message_db_init()
+    hashed_password = get_password(cursor, idx)
 
     if (check_password(password, hashed_password)):
-        res = delete_msg(conn, cursor, idx)
-
-        conn, cursor = message_db_init()
+        res = delete_msg(cursor, idx)
 
         if res['status'] == "success":
             return {"status": "success"}

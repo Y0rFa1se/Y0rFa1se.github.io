@@ -23,12 +23,9 @@ def message_db_init():
 
     conn.commit()
 
-    return conn, cursor
+    return cursor
 
-def close_db(conn):
-    conn.close()
-
-def get_latest_msg(conn, cursor, start_idx: int) -> dict:
+def get_latest_msg(cursor, start_idx: int) -> dict:
     """
     return list
     """
@@ -43,12 +40,12 @@ def get_latest_msg(conn, cursor, start_idx: int) -> dict:
     cursor.execute(query, (start_idx,))
     res = [dict(row) for row in cursor.fetchall()]
     res = res if res else []
-
-    close_db(conn)
+    
+    cursor.connection.commit()
 
     return res
 
-def save_msg(conn, cursor, datetime: str, nickname: str, password: str, content: str, has_image, link: str) -> dict:
+def save_msg(cursor, datetime: str, nickname: str, password: str, content: str, has_image, link: str) -> dict:
     query = f"""
     INSERT INTO messages (datetime, nickname, password, content, has_image, link)
     VALUES (?, ?, ?, ?, ?, ?)
@@ -56,11 +53,11 @@ def save_msg(conn, cursor, datetime: str, nickname: str, password: str, content:
 
     cursor.execute(query, (datetime, nickname, password, content, has_image, link))
 
-    close_db(conn)
+    cursor.connection.commit()
 
     return {"status": "success"}
 
-def get_password(conn, cursor, idx: str) -> str:
+def get_password(cursor, idx: str) -> str:
     query = f"""
     SELECT password FROM messages
     WHERE idx = ?
@@ -69,11 +66,11 @@ def get_password(conn, cursor, idx: str) -> str:
     cursor.execute(query, (idx,))
     res = cursor.fetchone()
 
-    close_db(conn)
+    cursor.connection.commit()
 
     return res[0]
 
-def find_msg(conn, cursor, idx: str) -> dict:
+def find_msg(cursor, idx: str) -> dict:
     """
     status, cursor포함한 dict 반환
     """
@@ -86,14 +83,14 @@ def find_msg(conn, cursor, idx: str) -> dict:
     cursor.execute(query, (idx,))
     res = cursor.fetchone()
 
+    cursor.connection.commit()
+
     if res:
         return {"status": "success", "message": dict(res)}
     
-    close_db(conn)
-    
     return {"status": "failed to find message"}
 
-def delete_msg(conn, cursor, idx: str) -> dict:
+def delete_msg(cursor, idx: str) -> dict:
     """cursor 입력받아서 삭제 후 status(dict) 반환"""
 
     if find_msg(cursor, idx)['status'] == "failed to find message":
@@ -106,7 +103,7 @@ def delete_msg(conn, cursor, idx: str) -> dict:
     """
 
     cursor.execute(query, (idx,))
-
-    close_db(conn)
+    
+    cursor.connection.commit()
 
     return {"status": "success"}

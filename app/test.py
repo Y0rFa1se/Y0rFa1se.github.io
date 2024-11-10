@@ -39,7 +39,7 @@ async def post_message(
 
     current_time = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
 
-    save_msg(cursor, current_time, nickname, password, content, image!=None, link)
+    save_msg(cursor, current_time, nickname, password, content, bool(image), link)
 
     return {"status": "success"}
 

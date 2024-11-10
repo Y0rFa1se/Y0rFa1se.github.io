@@ -42,28 +42,19 @@ async function template_message(message) {
 }
 
 async function body_load() {
-    try {
-        const response = await fetch(`${API_URL}/message/get?start_idx=${start_msg_idx}`);
-        
-        if (!response.ok) {
-            throw new Error(`HTTP error! Status: ${response.status}`);
-        }
-        
-        const data = await response.json();
-        
-        start_msg_idx += 10;
-        console.log(start_msg_idx);
-
-        console.log('Received data:', data);
-        draw_page(data);
-
-        return true;
-    } catch (error) {
-        console.error('Request failed', error);
-        alert('Failed to load data.');
-
-        return false;
+    const response = await fetch(`${API_URL}/message/get?start_idx=${start_msg_idx}`);
+    
+    if (!response.ok) {
+        throw new Error(`HTTP error! Status: ${response.status}`);
     }
+    
+    const data = await response.json();
+    
+    start_msg_idx += 10;
+    console.log(start_msg_idx);
+
+    console.log('Received data:', data);
+    draw_page(data);
 }
 
 async function draw_page(data) {

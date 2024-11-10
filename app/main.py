@@ -4,7 +4,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from typing import Optional
 
 from modules.imgur_api import imgur_upload
-from modules.database import get_latest_msg, save_msg, find_msg, delete_msg
+from modules.message_db import get_latest_msg, save_msg, find_msg, delete_msg
 
 env_dict = dotenv_values(".env")
 

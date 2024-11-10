@@ -51,7 +51,7 @@ async function body_load() {
         
         const data = await response.json();
         
-        start_msg_idx += 5;
+        start_msg_idx += 10;
         console.log(start_msg_idx);
 
         console.log('Received data:', data);

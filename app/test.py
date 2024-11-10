@@ -4,13 +4,12 @@ from fastapi.middleware.cors import CORSMiddleware
 from typing import Optional
 
 from modules.hash import hash_password, check_password
-from modules.database import get_latest_msg, save_msg, find_msg, delete_msg
+from modules.message_db import message_db_init, get_latest_msg, save_msg, delete_msg
 from modules.imgur_api import imgur_upload
-from modules.gpt_api import openai_init, template_text, openai_request
 
 env_dict = dotenv_values(".env")
 
-print(env_dict["IMGUR_CLIENT_ID"])
+cursor = message_db_init()
 
 app = FastAPI()
 
@@ -22,6 +21,10 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
+@app.get("/message/get")
+async def get_message(start_idx):
+    return get_latest_msg(start_idx)
+
 @app.post("/message/post")
 async def post_message(
     nickname: str = Form(...),
@@ -30,11 +33,20 @@ async def post_message(
     image: Optional[UploadFile] = File(None)
 ):
     link = imgur_upload(image, env_dict["IMGUR_CLIENT_ID"])
+    password = hash_password(password)
+    save_msg(cursor, nickname, password, content, image!=None, link)
 
-    print(link)
+    return {"status": "success"}
 
-    return {"status": "success", "link": link}
+@app.post("/message/delete")
+async def delete_message(
+    idx: str = Form(...),
+    password: str = Form(...)
+):
+    if (check_password(cursor, idx, password)):
+        res = delete_msg(cursor, idx)
 
-@app.get("/message/get")
-async def get_message(start_idx):
-    print(start_idx)
+        if res['status'] == "success":
+            return {"status": "success"}
+
+        return {"status": "failed to delete message"}

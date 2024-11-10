@@ -23,7 +23,7 @@ app.add_middleware(
 
 @app.get("/message/get")
 async def get_message(start_idx):
-    return get_latest_msg(start_idx)
+    return get_latest_msg(cursor, start_idx)
 
 @app.post("/message/post")
 async def post_message(

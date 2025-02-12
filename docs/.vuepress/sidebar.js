@@ -1,5 +1,5 @@
 export const sidebar = {
-  "/Pages/": [
+  "/Pages/TIL/": [
     {
       "text": "Index",
       "link": "til_index.md"

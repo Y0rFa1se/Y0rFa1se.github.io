@@ -11,7 +11,7 @@ export default hopeTheme({
     codeTabs: true,
   },
 
-  navbar: ['/', 'Pages/til_index.md'],
+  navbar: ['/', '/Pages/TIL/til_index.md'],
   sidebar,
   sidebarDepth: 2,
   sidebarAutoCollapse: true,

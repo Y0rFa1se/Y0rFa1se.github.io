@@ -11,7 +11,7 @@ export default hopeTheme({
     codeTabs: true,
   },
 
-  navbar: ['/', '/get-started.md'],
+  navbar: ['/', 'Pages/docs_index.md'],
   sidebar,
   sidebarDepth: 2,
   sidebarAutoCollapse: true,

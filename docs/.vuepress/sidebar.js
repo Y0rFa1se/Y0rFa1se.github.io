@@ -1,6 +1,9 @@
 export const sidebar = {
-  "/": [
-    "get-started",
+  "/Pages/": [
+    {
+      "text": "Index",
+      "link": "docs_index.md"
+    },
     {
       "text": "Major",
       "prefix": "Major/",

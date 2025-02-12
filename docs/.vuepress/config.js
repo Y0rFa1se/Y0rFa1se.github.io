@@ -5,8 +5,8 @@ import theme from './theme.js'
 export default defineUserConfig({
   lang: 'en-US',
 
-  title: 'VuePress',
-  description: 'My first VuePress Site',
+  title: 'Y0rFa1se',
+  description: 'Github Pages',
 
   theme,
 

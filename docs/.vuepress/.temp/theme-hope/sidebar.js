@@ -1,1 +1,0 @@
-export const sidebarData = {"/Pages/Major/":[{"text":"Mathematics","prefix":"Mathematics/","collapsible":true,"children":[{"text":"Set Theory","prefix":"Set Theory/","collapsible":true,"children":["Hausdorff Maximal Principle"]}]}]};

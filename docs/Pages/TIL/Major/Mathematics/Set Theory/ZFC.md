@@ -17,8 +17,9 @@ $Let \ A = \{x : x \notin x\}$ 일 때, A가 자기 자신을 포함한다면, A
 
 일반적으로 1~10번까지의 공리를 공리계로서 채택하여 사용하고 있고 이를 ZFC공리계라 부른다.
 
-*집합론에서 모든것은 집합이지만, 편의를 위하여*
-*원소는 소문자, 집합은 대문자, family는 mathbb로 표현하였다.*
+*집합론에서 모든것은 집합이지만*
+
+*편의를 위하여 원소는 소문자, 집합은 대문자, family는 mathbb로 표현하였다.*
 
 ## 1. Extensionality Axiom
 $\forall A \forall B [\forall x(x \in A \iff x \in B) \implies A = B]$

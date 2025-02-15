@@ -58,7 +58,7 @@ $a+b=b+a$ 이고 $a+(b+c)=(a+b)+c$ 이다.(곱셈도 마찬가지)
 
 이제 체를 정의했으니 벡터공간을 정의할 수 있다.
 
-## Definition of Vector Space(VS)
+## Definition of Vector Space
 체($F$)와 두 이항연산 $+$, $\cdot$ 이 필요하다. 이때 이 연산들은 체 위에서가 아닌 벡터공간 위에서 정의되어야 한다.
 
 다음의 정의를 만족시키는 순서집합$<\mathbf{V}, F, +, \cdot>$을 벡터공간이라 정의한다. ($\mathbf{V}$ 를 말할때도 있다.)

@@ -82,7 +82,7 @@ a_n
 
 이제 벡터를 행렬로 표현할 수 있게 되었으므로, 다음의 관계를 기술 할 수 있다.
 
-$\forall \mathbf{x} \in \mathbf{V} \ $
+$\forall \mathbf{x} \in \mathbf{V}$
 $[\mathcal{T}(\mathbf{x})]_{\gamma} = [\mathcal{T}]_{\beta}^{\gamma}[\mathbf{x}]_{\beta}$
 
 위의 행렬과 선형변환의 관계를 나타낸 수식이다.

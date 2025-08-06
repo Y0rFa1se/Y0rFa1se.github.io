@@ -2,4 +2,5 @@
 test
 docs
 
-*.pyc
+__pycache__
+*.py[cod]

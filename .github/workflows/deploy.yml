@@ -40,8 +40,8 @@ jobs:
     
     - name: Commit pages
       run: |
-        git fetch origin built-pages
-        git checkout built-pages
+        git fetch origin gh-pages
+        git checkout gh-pages
 
         find . -mindepth 1 -maxdepth 1 ! -name '.*' -exec rm -rf {} +
 
@@ -50,4 +50,4 @@ jobs:
         git add .
         git commit -m "Deploy Pages"
 
-        git push origin built-pages --force
+        git push origin gh-pages --force

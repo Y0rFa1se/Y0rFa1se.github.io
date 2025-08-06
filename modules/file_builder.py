@@ -24,5 +24,5 @@ def initializer():
 </html>
 """
 
-    with open("/docs/index.html", "w", encoding="utf-8") as f:
+    with open(os.path.join("docs", "index.html"), "w", encoding="utf-8") as f:
         f.write(index_content)

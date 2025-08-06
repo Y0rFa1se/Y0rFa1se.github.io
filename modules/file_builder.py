@@ -1,28 +1,16 @@
+from jinja2 import Template
+
 import os
 
-def initializer():
+def initializer(tab_title, page_title):
     os.makedirs("docs", exist_ok=True)
 
     pages = [page.replace(".md", "") for page in os.listdir("pages")]
-    pages_template = ""
-    
-    for page in pages:
-        pages_template += f"<li><a href='{page}.html'>{page}</a></li>\n"
-    pages_template[:-1]
 
-    index_content = f"""<!DOCTYPE html>
-<html>
-<head>
-    <title>안녕하세요</title>
-</head>
-<body>
-    <h1>안녕하세요</h1>
-    <ul>
-        {pages_template}
-    </ul>
-</body>
-</html>
-"""
+    with open(os.path.join("templates", "index.html")) as f:
+        template_content = f.read()
+        template = Template(template_content)
+        index_content = template.render(tab_title=tab_title, page_title=page_title, files=pages)
 
     with open(os.path.join("docs", "index.html"), "w", encoding="utf-8") as f:
         f.write(index_content)

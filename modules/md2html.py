@@ -1,29 +1,16 @@
 import markdown
 from markdown.extensions import codehilite
+from jinja2 import Template
+
+import os
 
 def convert_md_to_html(title, md_content):
     md = markdown.Markdown(extensions=['codehilite', 'fenced_code'])
     html_converted = md.convert(md_content)
 
-    html_content = f"""<!DOCTYPE html>
-<html>
-<head>
-    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>
-        MathJax = {{
-            tex: {{inlineMath: [['$', '$'], ['\\(', '\\)']]}},
-            svg: {{fontCache: 'global'}}
-        }};
-    </script>
-</head>
-<body>
-    <h1>{title}</h1>
-    <a href="index.html">Back</a>
-    <br>
-    <br>
-    {html_converted}
-</body>
-</html>
-"""
+    with open(os.path.join("templates", "page.html")) as f:
+        template_content = f.read()
+        template = Template(template_content)
+        html_content = template.render(page_title=title, html_converted=html_converted)
+
     return html_content

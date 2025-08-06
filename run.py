@@ -3,8 +3,11 @@ from modules.file_builder import initializer
 
 import os
 
+TAB_TITLE = "안녕하세요😘"
+INDEX_PAGE_TITLE = "Github Pages ✋🏻"
+
 def main():
-    initializer()
+    initializer(TAB_TITLE, INDEX_PAGE_TITLE)
 
     for filename in os.listdir("pages"):
         with open(os.path.join("pages", filename), "r", encoding="utf-8") as f:

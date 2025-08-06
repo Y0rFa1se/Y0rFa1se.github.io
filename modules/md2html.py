@@ -11,6 +11,6 @@ def convert_md_to_html(title, md_content):
     with open(os.path.join("templates", "page.html")) as f:
         template_content = f.read()
         template = Template(template_content)
-        html_content = template.render(page_title=title, html_converted=html_converted)
+        html_content = template.render(tab_title=title, page_title=title, html_converted=html_converted)
 
     return html_content

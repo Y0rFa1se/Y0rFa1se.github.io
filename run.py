@@ -14,3 +14,6 @@ def main():
 
             with open(os.path.join("docs", f"{filename}.html"), "w", encoding="utf-8") as html_file:
                 html_file.write(html_content)
+
+if __name__ == "__main__":
+    main()

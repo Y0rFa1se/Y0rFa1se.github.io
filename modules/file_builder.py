@@ -8,12 +8,12 @@ def initializer():
     
     for page in pages:
         pages_template += f"<li><a href='{page}.html'>{page}</a></li>\n"
+    pages_template[:-1]
 
-    index_content = f"""
-<!DOCTYPE html>
+    index_content = f"""<!DOCTYPE html>
 <html>
 <head>
-    <title>안녕하세요<title>
+    <title>안녕하세요</title>
 </head>
 <body>
     <h1>안녕하세요</h1>

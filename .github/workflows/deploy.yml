@@ -49,6 +49,9 @@ jobs:
         cp -r /tmp/gh_pages_backup/* ./
 
         git add .
-        git commit -m "Deploy Pages"
-
-        git push origin gh-pages --force
+        if ! git diff --staged --quiet; then
+            git commit -m "Deploy Pages"
+            git push origin gh-pages --force
+        else
+            echo "No changes to deploy"
+        fi

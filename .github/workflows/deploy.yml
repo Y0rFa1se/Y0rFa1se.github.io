@@ -40,12 +40,12 @@ jobs:
     
     - name: Commit pages
       run: |
-        git fetch origin pages
-        git checkout pages
+        git fetch origin built-pages
+        git checkout built-pages
 
         cp -r /tmp/gh_pages_backup/* ./
 
         git add .
         git commit -m "Deploy Pages"
 
-        git push origin pages --force
+        git push origin built-pages --force

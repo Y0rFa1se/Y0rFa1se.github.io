@@ -31,9 +31,8 @@ jobs:
         python run.py
 
         mkdir -p /tmp/gh_pages_backup
-        mkdir -p /tmp/gh_pages_backup/assets
         cp -r docs/* /tmp/gh_pages_backup/
-        cp -r templates/assets /tmp/gh_pages_backup/assets/
+        cp -r templates/assets /tmp/gh_pages_backup/
     
     - name: Setup Git config
       run: |

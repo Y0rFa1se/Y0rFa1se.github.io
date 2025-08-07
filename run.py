@@ -4,7 +4,7 @@ from modules.file_builder import initializer
 import os
 
 INDEX_TAB_TITLE = "공부하다가 끄적거린거😘"
-INDEX_PAGE_TITLE = "공부하다가 끄적거린거 적어놓는 곳입니다 ✋🏻"
+INDEX_PAGE_TITLE = "Today I Learned 📚"
 
 def main():
     initializer(INDEX_TAB_TITLE, INDEX_PAGE_TITLE)

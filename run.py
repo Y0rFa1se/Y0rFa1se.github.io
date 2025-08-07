@@ -3,8 +3,8 @@ from modules.file_builder import initializer
 
 import os
 
-INDEX_TAB_TITLE = "안녕하세요😘"
-INDEX_PAGE_TITLE = "Github Pages ✋🏻"
+INDEX_TAB_TITLE = "공부하다가 끄적거린거😘"
+INDEX_PAGE_TITLE = "공부하다가 끄적거린거 적어놓는 곳입니다 ✋🏻"
 
 def main():
     initializer(INDEX_TAB_TITLE, INDEX_PAGE_TITLE)

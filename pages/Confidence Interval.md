@@ -1,6 +1,5 @@
-# Confidence Interval
-
-> [a, b]가 어떤 모수(Parameter)의 90% 신뢰구간(Confidence Interval)일때 이 모수가 [a, b] 안에 있을 확률은 90%가 아니다
+>
+ [a, b]가 어떤 모수(Parameter)의 90% 신뢰구간(Confidence Interval)일때 이 모수가 [a, b] 안에 있을 확률은 90%가 아니다
 하지만 어떤 모수의 90% 신뢰구간을 구했을 때 그 구간 안에 이 모수가 있을 확률은 90%이다
 > 
 

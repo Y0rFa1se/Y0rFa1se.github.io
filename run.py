@@ -12,7 +12,7 @@ def main():
     for filename in os.listdir("pages"):
         with open(os.path.join("pages", filename), "r", encoding="utf-8") as f:
             md_content = f.read()
-            filename = filename.replace(".md", "")
+            filename = filename.replace(".md", "").replace(" ", "-")
             html_content = convert_md_to_html(filename, md_content)
 
             with open(os.path.join("docs", f"{filename}.html"), "w", encoding="utf-8") as html_file:

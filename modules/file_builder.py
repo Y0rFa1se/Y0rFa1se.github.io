@@ -5,7 +5,7 @@ import os
 def initializer(tab_title, page_title):
     os.makedirs("docs", exist_ok=True)
 
-    pages = [page.replace(".md", "") for page in os.listdir("pages")]
+    pages = [page.replace(".md", "").replace(" ", "-") for page in os.listdir("pages")]
 
     with open(os.path.join("templates", "index.html")) as f:
         template_content = f.read()

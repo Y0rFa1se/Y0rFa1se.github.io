@@ -32,7 +32,6 @@ jobs:
 
         mkdir -p /tmp/gh_pages_backup
         cp -r docs/* /tmp/gh_pages_backup/
-        cp -r templates/assets /tmp/gh_pages_backup/
     
     - name: Setup Git config
       run: |

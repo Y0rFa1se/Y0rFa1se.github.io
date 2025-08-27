@@ -1,24 +1,23 @@
 <!DOCTYPE html>
-<html>
+<html lang="ko">
 <head>
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    
-    {% raw %}
     <script>
         MathJax = {
             tex: {inlineMath: [["$", "$"], ["\\(", "\\)"]]},
             svg: {fontCache: 'global'}
         };
     </script>
-    {% endraw %}
+    <base href="https://y0rfa1se.github.io/">
 
-    <title>{{ tab_title }}</title>
+    <title>{{ title }}</title>
 </head>
 <body>
-    <h1>{{ page_title }}</h1>
-    <a href="index.html">Back</a>
+    <h1>{{ title }}</h1>
+    <a href="/index.html">Home</a>
     <br>
     <br>
     {{ html_converted }}

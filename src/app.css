@@ -1,0 +1,46 @@
+.math-display {
+	display: block;
+	max-width: 100%;
+	overflow-x: auto;
+	overflow-y: hidden;
+}
+
+.math-display > .katex-display {
+	display: block;
+	max-width: 100%;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.katex-display > .katex {
+	max-width: 100%;
+}
+
+@media (prefers-color-scheme: dark) {
+	::selection {
+		background: rgba(255, 255, 84, 1);
+		color: #111;
+	}
+}
+
+@media (prefers-color-scheme: light) {
+	::selection {
+		background: rgba(255, 255, 84, 1);
+		color: #000;
+	}
+}
+
+ol {
+	counter-reset: item;
+	list-style: none;
+	padding-left: 2.5em;
+}
+
+ol > li {
+	counter-increment: item;
+}
+
+ol > li::marker {
+	content: counters(item, '.') '. ';
+	font-variant-numeric: tabular-nums;
+}

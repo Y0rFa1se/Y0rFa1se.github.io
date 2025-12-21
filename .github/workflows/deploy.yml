@@ -1,0 +1,50 @@
+name: gh-pages Deploy
+
+on:
+  push:
+    branches: [main]
+
+permissions:
+  contents: write
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup git user
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+
+      - name: Install & Build
+        shell: bash
+        run: |
+          npm ci
+          npm run build
+
+          mkdir -p ../artifacts
+          cp -a build/. ../artifacts/
+
+      - name: Publish to gh-pages
+        shell: bash
+        run: |
+          git switch --orphan gh-pages
+          git rm -rf . || true
+
+          cp -a ../artifacts/. ./
+
+          git add -A
+          git commit -m "Deploy: $(date -u +"%Y-%m-%d %H:%M:%S UTC")"
+          git push --force origin gh-pages

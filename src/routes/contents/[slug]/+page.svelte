@@ -20,6 +20,8 @@
 
 {#if Page}
     <main>
+        <h1>{data.metadata.title}</h1>
+        <p class="author">Last Edited: {data.metadata.lastModified}</p>
         <svelte:component this={Page} />
     </main>
 {:else}

@@ -4,7 +4,6 @@ import { vitePreprocess } from '@sveltejs/vite-plugin-svelte';
 
 import remarkMath from 'remark-math';
 import remarkGfm from 'remark-gfm';
-import remarkFootnotes from 'remark-footnotes';
 import rehypeKatex from 'rehype-katex-svelte';
 import rehypeSlug from 'rehype-slug';
 import rehypeAutolinkHeadings from 'rehype-autolink-headings';
@@ -16,8 +15,7 @@ const config = {
 			extensions: ['.svx', '.md'],
 			remarkPlugins: [
 				remarkMath,
-				remarkGfm,
-				[remarkFootnotes, { inlineNotes: true }]
+				remarkGfm
 			],
 			rehypePlugins: [
 				rehypeKatex,

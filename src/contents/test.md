@@ -1,4 +1,6 @@
-# hi
+---
+title: test
+---
 
 hi 안녕하세요
 
@@ -37,8 +39,6 @@ $$
 `#ffffff`
 
 ![gif](https://camo.githubusercontent.com/9a6371c01f5328c4ca9863c3cb2932d280ef2516a2c7762760f7fa04954a8b85/68747470733a2f2f6d656469612e67697068792e636f6d2f6d656469612f4d54636c6643723474566769732f67697068792e676966)
-
-[Link to Title](#hi)
 
 - list
 - list
@@ -96,5 +96,3 @@ $$
     content
   </details>
 </details>
-
-obsidian git plugin test

@@ -3,6 +3,8 @@ import { error } from '@sveltejs/kit';
 import { stat } from 'node:fs/promises';
 import path from 'node:path';
 
+export const prerender = true;
+
 const posts = import.meta.glob('/src/contents/*.md');
 
 export const entries = () => {

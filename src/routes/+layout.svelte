@@ -14,7 +14,7 @@
 				}
 			}, 0);
 		});
-	}
+	}	
 </script>
 
 <svelte:head>

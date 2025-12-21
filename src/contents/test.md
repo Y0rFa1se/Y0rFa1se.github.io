@@ -68,7 +68,7 @@ inline footnotes^[like this]
   <p>...</p>
 </div>
 
-<div class="theorem">...</div>
+<div class="theorem">$\alpha$</div>
 <div class="definition">...</div>
 <div class="lemma">...</div>
 <div class="proof">...</div>

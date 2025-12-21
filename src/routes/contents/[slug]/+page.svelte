@@ -9,13 +9,13 @@
 </script>
 
 <svelte:head>
-	<title>{data.slug}</title>
+	<title>{data.metadata.title}</title>
 
-	<meta property="og:title" content={data.slug} />
-	<meta property="og:description" content={data.slug} />
+	<meta property="og:title" content={data.metadata.title} />
+	<meta property="og:description" content={data.metadata.title} />
 	<meta property="og:url" content={`https://Y0rFa1se.github.io/${data.slug}`} />
 
-	<meta name="description" content={data.slug} />
+	<meta name="description" content={data.metadata.title} />
 </svelte:head>
 
 {#if Page}

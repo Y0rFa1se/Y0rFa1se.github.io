@@ -1,3 +1,7 @@
+body {
+	font-size: 1.2em;
+}
+
 .math-display {
 	display: block;
 	max-width: 100%;
@@ -14,6 +18,12 @@
 
 .katex-display > .katex {
 	max-width: 100%;
+}
+
+.katex .katex-mathml {
+	user-select: none;
+	-webkit-user-select: none;
+	-moz-user-select: none;
 }
 
 @media (prefers-color-scheme: dark) {

@@ -4,6 +4,7 @@ import { vitePreprocess } from '@sveltejs/vite-plugin-svelte';
 
 import remarkMath from 'remark-math';
 import remarkGfm from 'remark-gfm';
+
 import rehypeKatex from 'rehype-katex-svelte';
 import rehypeSlug from 'rehype-slug';
 import rehypeAutolinkHeadings from 'rehype-autolink-headings';
@@ -13,10 +14,7 @@ const config = {
 		vitePreprocess(),
 		mdsvex({
 			extensions: ['.svx', '.md'],
-			remarkPlugins: [
-				remarkMath,
-				remarkGfm
-			],
+			remarkPlugins: [remarkMath, remarkGfm],
 			rehypePlugins: [
 				rehypeKatex,
 				rehypeSlug,
@@ -37,9 +35,7 @@ const config = {
 	extensions: ['.svelte', '.svx', '.md'],
 	kit: {
 		adapter: adapter(),
-		prerender: {
-			entries: ['*']
-		}
+		prerender: { entries: ['*'] }
 	}
 };
 

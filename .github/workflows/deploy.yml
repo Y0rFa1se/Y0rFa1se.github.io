@@ -40,12 +40,16 @@ jobs:
       - name: Publish to gh-pages
         shell: bash
         run: |
-          git rm -rf . || true
+          set -euxo pipefail
+
           git switch --orphan gh-pages
-          git rm -rf . || true
+
+          git reset --hard
+          git clean -fdx
 
           cp -a ../artifacts/. ./
 
           git add -A
           git commit -m "Deploy: $(date -u +"%Y-%m-%d %H:%M:%S UTC")"
           git push --force origin gh-pages
+

@@ -40,6 +40,7 @@ jobs:
       - name: Publish to gh-pages
         shell: bash
         run: |
+          git rm -rf . || true
           git switch --orphan gh-pages
           git rm -rf . || true
 

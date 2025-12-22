@@ -54,3 +54,16 @@ ol > li::marker {
 	content: counters(item, '.') '. ';
 	font-variant-numeric: tabular-nums;
 }
+
+ol {
+	padding-left: 0;
+	list-style-position: inside;
+}
+
+ol > li {
+	margin-left: 0.5em;
+}
+
+ol ol > li {
+	margin-left: 1em;
+}

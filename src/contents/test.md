@@ -1,5 +1,7 @@
 ---
 title: test
+abstract: test
+category: test
 ---
 
 hi 안녕하세요

@@ -8,6 +8,12 @@
 	<meta name="description" content="why??" />
 </svelte:head>
 
+<script lang="ts">
+    import Navbar from '$lib/Navbar.svelte';
+</script>
+
+<Navbar />
+
 why??
 
 test[^1]

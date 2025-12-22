@@ -1,24 +1,18 @@
 ---
 title: Euler's Number
+abstract: 해석학에서 중요한 역할을 맡고있는 오일러 상수와 관련 함수들의 성질에 대해서 알아보자. 이 포스트에서 다루는 체(Field)는 실수로 한정한다.
+category: Mathematics/Analysis/Real Analysis/Euler's Number
 ---
 
-<div class="abstract">
-    <h2>Abstract</h2>
-    <p>
-    해석학에서 중요한 역할을 맡고있는 오일러 상수와 관련 함수들의 성질에 대해서 알아보자.
-    이 포스트에서 다루는 체(Field)는 실수로 한정한다.
-    </p>
-</div>
-
 ## Euler's Number $e$
-오일러 상수 $e$는 $\lim\limits_{n \rightarrow \infty} {(1 + 1/n)^n}$ 의 수렴값임이 아주 잘 알려져 있다.
+오일러 상수 $e$는 $\lim\limits_{n \rightarrow \infty} {(1 + \frac{1}{n})^n}$ 의 수렴값임이 아주 잘 알려져 있다.
 
 따라서 간단하게 존재성만 보이도록 하자.
 
 다음의 정리들을 증명없이 소개한다.
 
 #### Monotone Convergence Theorem
-> If a sequence of real numbers $a_n$ is monotone and bounded, then $a_n$ converges
+> If a sequence of real numbers $a_n$ is monotone and bounded, then $a_n$ converges.
 
 #### Binomial Theorem
 > $\forall a \in \mathbb{R} \ \forall n \in \mathbb{N}$,

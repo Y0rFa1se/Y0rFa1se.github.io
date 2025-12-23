@@ -26,7 +26,7 @@
 </div>
 
 <div class="content">
-    <h2>Contents</h2>
+    <h2>Research Notes</h2>
     <CategoryToc />
 </div>
 

@@ -25,7 +25,7 @@
 {#if Page}
     <main>
         <h1>{data.metadata.title}</h1>
-        <p class="author">Last Edited: {data.metadata.lastModified}</p>
+        <p class="author">Last Revised: {data.metadata.lastModified}</p>
 
         <div class="abstract">
             <h2>Abstract</h2>

@@ -13,6 +13,8 @@ declare global {
 		export default Component;
 		export const metadata: Record<string, any>;
 	}
+
+	var kofiWidgetOverlay: any;
 }
 
 export {};

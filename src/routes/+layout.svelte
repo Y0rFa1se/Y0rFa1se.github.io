@@ -3,6 +3,7 @@
 
 	let { children } = $props();
 
+	import { onMount } from 'svelte';
 	import { afterNavigate } from '$app/navigation';
 	import { browser } from '$app/environment';
 
@@ -14,7 +15,18 @@
 				}
 			}, 0);
 		});
-	}	
+	}
+
+	onMount(() => {
+		if (typeof kofiWidgetOverlay !== 'undefined') {
+		kofiWidgetOverlay.draw('y0rfa1se', {
+			'type': 'floating-chat',
+			'floating-chat.donateButton.text': 'Support me',
+			'floating-chat.donateButton.background-color': '#323842',
+			'floating-chat.donateButton.text-color': '#fff'
+		});
+		}
+	});
 </script>
 
 <svelte:head>
@@ -36,6 +48,8 @@
 		property="og:image"
 		content="/favicon.png"
 	/>
+
+	<script src='https://storage.ko-fi.com/cdn/scripts/overlay-widget.js'></script>
 </svelte:head>
 
 {@render children()}

@@ -1,5 +1,7 @@
 <script lang="ts">
     import CategoryToc from "$lib/CategoryToc.svelte";
+
+	import Content from "./index.md";
 </script>
 
 <svelte:head>
@@ -29,6 +31,8 @@
     <h2>Research Notes</h2>
     <CategoryToc />
 </div>
+
+<Content />
 
 <hr />
 

@@ -12,10 +12,8 @@
     import Navbar from '$lib/Navbar.svelte';
 </script>
 
-<Navbar />
+<Navbar category="??" />
+
+<br>
 
 why??
-
-test[^1]
-
-[^1]: test footnote

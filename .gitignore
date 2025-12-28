@@ -26,3 +26,4 @@ vite.config.ts.timestamp-*
 .makemd
 .space
 .trash
+src/contents/Tags

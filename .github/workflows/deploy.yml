@@ -28,6 +28,16 @@ jobs:
           node-version: '22'
           cache: npm
 
+      - name: Restore Timestamps
+        shell: bash
+        run: |
+          find src/contents -type f | while read -r file; do
+            LAST_COMMIT_DATE=$(git log -1 --format=%ai -- "$file")
+            if [ -n "$LAST_COMMIT_DATE" ]; then
+              touch -d "$LAST_COMMIT_DATE" "$file"
+            fi
+          done
+
       - name: Install & Build
         shell: bash
         run: |
@@ -52,4 +62,3 @@ jobs:
           git add -A
           git commit -m "Deploy: $(date -u +"%Y-%m-%d %H:%M:%S UTC")"
           git push --force origin gh-pages
-

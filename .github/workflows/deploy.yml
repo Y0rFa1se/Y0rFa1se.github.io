@@ -22,30 +22,36 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
 
-      - name: Setup Node.js     # 파이썬으로 변경
-        uses: actions/setup-node@v4
+      - name: Setup Python
+        uses: actions/setup-python@v5
         with:
-          node-version: '22'
-          cache: npm
+          python-version: "3.12"
+          cache: "pip"
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install uv
+
+          uv sync
 
       - name: Restore Timestamps
         shell: bash
         run: |
-          find src/contents -type f | while read -r file; do
+          find docs/ -type f | while read -r file; do
             LAST_COMMIT_DATE=$(git log -1 --format=%ai -- "$file")
             if [ -n "$LAST_COMMIT_DATE" ]; then
               touch -d "$LAST_COMMIT_DATE" "$file"
             fi
           done
 
-      - name: Install & Build    # uv로 변경
+      - name: Build Pages
         shell: bash
         run: |
-          npm ci
-          npm run build
+          uv run mkdocs build
 
           mkdir -p ../artifacts
-          cp -a build/. ../artifacts/
+          cp -a site/. ../artifacts/
 
       - name: Publish to gh-pages
         shell: bash

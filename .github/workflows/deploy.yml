@@ -22,7 +22,7 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
 
-      - name: Setup Node.js
+      - name: Setup Node.js     # 파이썬으로 변경
         uses: actions/setup-node@v4
         with:
           node-version: '22'
@@ -38,7 +38,7 @@ jobs:
             fi
           done
 
-      - name: Install & Build
+      - name: Install & Build    # uv로 변경
         shell: bash
         run: |
           npm ci

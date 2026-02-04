@@ -1,8 +1,4 @@
----
-title: Euler's Number
-abstract: 해석학에서 중요한 역할을 맡고있는 오일러 상수와 관련 함수들의 성질에 대해서 알아보자. 이 포스트에서 다루는 체(Field)는 실수로 한정한다.
-category: Mathematics/Analysis/Real Analysis/Euler's Number
----
+# e(수정중)
 
 ## Euler's Number $e$
 오일러 상수 $e$는 $\lim\limits_{n \rightarrow \infty} {(1 + \frac{1}{n})^n}$ 의 수렴값임이 아주 잘 알려져 있다.
@@ -78,9 +74,11 @@ $a^{-n} = \frac{1}{a^n}, \ a^{\frac{1}{n}} = \sqrt[n]{a}$로 정의하고 지수
 
 
 이제 $L(x) \  (x > 0)$ 함수를 다음과 같이 정의하자.
+
 $$
 L(x) = \int_1^x{\frac{1}{t}}dt
 $$
+
 $\frac{1}{t}$ 함수는 $(0, \infty)$에서 연속이므로 적분 가능하고, $\forall x \in (0, \infty) \ L'(x) = \frac{1}{x}$ 가 성립한다. $L$은 위의 정리에 따라 자명히 연속이다. 또한 도함수가 항상 양수이므로 이 함수는 strictly increasing이다. (사실 이 함수는 $\ln x$ 임을 이미 모두가 알고있다.)
 
 이 함수에서 다음이 성립하는 것을 쉽게 확인 할 수 있다.

@@ -1,8 +1,5 @@
----
-title: RSA
-abstract: 현대 공개키 암호화의 조상격 되는 RSA 암호화에 대해 알아보자
-category: Mathematics/Algebra/Number Theory/RSA
----
+# RSA(수정중)
+
 ## Prerequisites
 
 #### Fermat's theorem
@@ -74,4 +71,20 @@ $n$이 소수일때, $\phi(n) = n - 1$ 이므로, 페르마 소정리를 포함�
 
 기존에 사용하던 암호화 방식은 암호화 키와 복호화 키가 동일했다.
 
-![](4987523F-BDDA-4249-A112-B1B3A92B2229.jpg)
+
+## Euler's phi($\phi$) function
+
+$$\phi(n) = \# \ \text{of} \ k < n s.t. \ \gcd(k, n) = 1$$
+
+### Properties
+
+$$\textbf{(a)} \ \text{If} \ p \ \text{is a prime,} \ \phi(p) = p-1.$$
+$$\textbf{(b)} \ \phi \ \text{is multiplicative.}$$
+$$\text{i.e. If} \ \gcd(m, n) = 1, \ \text{then} \ \phi(mn) = \phi(m)\phi(n)$$
+
+
+## Fermat's Theorem
+
+$$\text{Let} \ p \ \text{be a prime and} \ p \nmid a$$
+$$a^{p-1} \equiv 1 \pmod{p}$$
+

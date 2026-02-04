@@ -1,6 +1,5 @@
 # Test
 
-
 테스트중
 
 $\frac{\partial}{\partial x}$
@@ -55,6 +54,15 @@ hi
 !!! info "Theorem 1.9.2 (Fermat)"
 
     $$\text{TeX test} \ \alpha$$
+
+
+!!! example
+
+    ex
+
+!!! quote
+
+    quote
 
 ``` mermaid
 flowchart TD

@@ -1,18 +1,7 @@
-# Github Pages
+# My Pages
 
+## About me
 
-테스트중
+**B.S. in Mathematics & Computer Science, Hanyang University '23**
 
-$\frac{\partial}{\partial x}$
-
-$$
-\alpha \ \text{asdf}
-$$
-
-```py
-import math
-```
-
-!!! notes
-
-    Hihi
+또 뭐쓰지

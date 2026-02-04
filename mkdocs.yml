@@ -21,11 +21,17 @@ theme:
   features:
     - content.code.copy
     - content.code.annotate
+    - search.suggest
+    - search.highlight
 
 markdown_extensions:
   - admonition
   - pymdownx.details
-  - pymdownx.superfences
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
   - pymdownx.highlight:
       anchor_linenums: true
       line_spans: __span
@@ -35,8 +41,15 @@ markdown_extensions:
   - pymdownx.arithmatex:
       generic: true
 
+  - pymdownx.critic
+  - pymdownx.caret
+  - pymdownx.keys
+  - pymdownx.mark
+  - pymdownx.tilde
+
 plugins:
   - document-dates
+  - search
 
 extra_javascript:
   - javascripts/katex.js

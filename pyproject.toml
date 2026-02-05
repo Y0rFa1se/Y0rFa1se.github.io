@@ -1,11 +1,9 @@
 [project]
-name = "y0rfa1se-github-io"
+name = "y0rfa1se-github-io-dev"
 version = "0.1.0"
 description = "Add your description here"
 readme = "README.md"
 requires-python = ">=3.13"
 dependencies = [
-    "mkdocs-document-dates>=3.6.0",
-    "mkdocs-material[recommended]>=9.7.1",
-    "pymdown-extensions>=10.20.1",
+    "zensical>=0.0.21",
 ]

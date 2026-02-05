@@ -3,107 +3,98 @@ icon: simple/markdown
 comments: true
 ---
 
-# Markdown in 5min
+# Markdown Test
 
-## Headers
-```
-# H1 Header
-## H2 Header
-### H3 Header
-#### H4 Header
-##### H5 Header
-###### H6 Header
-```
+## h2
+!!! note
+    hi
 
-## Text formatting
-```
-**bold text**
-*italic text*
-***bold and italic***
-~~strikethrough~~
-`inline code`
-```
+### h3
+??? abstract
+    hi
 
-## Links and images
-```
-[Link text](https://example.com)
-[Link with title](https://example.com "Hover title")
-![Alt text](image.jpg)
-![Image with title](image.jpg "Image title")
-```
+???+ info
+    hi
 
-## Lists
-```
-Unordered:
-- Item 1
-- Item 2
-  - Nested item
+#### h4
+!!! tip "TIP"
 
-Ordered:
-1. First item
-2. Second item
-3. Third item
-```
+!!! success inline
+    inline
 
-## Blockquotes
-```
-> This is a blockquote
-> Multiple lines
->> Nested quote
-```
+asdfasdf
 
-## Code blocks
-````
-```javascript
-function hello() {
-  console.log("Hello, world!");
-}
-```
-````
+## h2_2
+asdfasdf
 
-## Tables
-```
-| Header 1 | Header 2 | Header 3 |
-|----------|----------|----------|
-| Row 1    | Data     | Data     |
-| Row 2    | Data     | Data     |
+!!! success inline end
+    inline end
+
+!!! question
+
+!!! warning
+
+### h3
+!!! failure
+
+!!! danger
+
+#### h4
+!!! bug
+
+##### h5
+!!! example
+
+###### h6
+!!! quote
+
+++ctrl+alt+del++
+
+```python title="test.py" linenums="1" hl_lines="2"
+import random
+import torch
+import os
 ```
 
-## Horizontal rule
-```
----
-or
-***
-or
-___
-```
-
-## Task lists
-```
-- [x] Completed task
-- [ ] Incomplete task
-- [ ] Another task
+``` mermaid
+graph LR
+  A[Start] --> B{Error?};
+  B -->|Yes| C[Hmm...];
+  C --> D[Debug];
+  D --> B;
+  B ---->|No| E[Yay!];
 ```
 
-## Escaping characters
-```
-Use backslash to escape: \* \_ \# \`
-```
+- [x] first
+    * [x] second
+- [ ] third
 
-## Line breaks
-```
-End a line with two spaces  
-to create a line break.
+`def`
+:   definition
 
-Or use a blank line for a new paragraph.
-```
 
+| this | is | table |
+| --- | --- | --- |
+| element | element | element |
+
+
+=== "option1"
+    hi
+
+=== "option2"
+    hello
+
+:fontawesome-regular-face-laugh-wink:
+
+[Home Button](#){ .md-button .md-button--primary }
+
+Lorem ipsum[^1].
+
+[^1]: Lorem ipsum.
 
 $$
-\alpha
+\begin{matrix}
+&\sum\limits_{i=0}^{\infty}{i}\\
+&\beta
+\end{matrix}
 $$
-
-hi $\alpha$ sf
-
-
-## hi $\alpha$ asd

@@ -69,11 +69,11 @@ $n$ 보다 작은 서로소의 개수를 나타낸다.
 
 !!! info "Properties"
     $$
-    \begin{flalign}
+    \begin{aligned}
     \textbf{(a)} \ &\text{If} \ p \ \text{is a prime, then} \ \phi(p) = p-1 \\
     \textbf{(b)} \ &\phi \ \text{is multiplicative.} \\
     &\text{i.e.} \ \text{if} \ \gcd(m, n) = 1, \ \text{then} \ \phi(mn) = \phi(m)\phi(n)
-    \end{flalign}
+    \end{aligned}
     $$
 
 multiplicative 개념은 정수론 전반에 등장하므로, 알아두면 좋다.

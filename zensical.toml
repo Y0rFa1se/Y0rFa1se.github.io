@@ -10,12 +10,14 @@ copyright = """
 Copyright &copy; 2026 The authors
 """
 extra_javascript = [
-    "javascripts/mathjax.js",
-    "https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js",
+    "javascripts/katex.js",
+    "https://unpkg.com/katex@0/dist/katex.min.js",
+    "https://unpkg.com/katex@0/dist/contrib/auto-render.min.js"
 ]
 extra_css = [
+    "https://unpkg.com/katex@0/dist/katex.min.css",
     "stylesheets/admonition.css",
-    "stylesheets/mathjax.css",
+    "stylesheets/katex.css",
 ]
 
 # [project.markdown_extensions.pymdownx.arithmatex]

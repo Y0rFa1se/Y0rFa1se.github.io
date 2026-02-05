@@ -13,6 +13,9 @@ extra_javascript = [
     "javascripts/mathjax.js",
     "https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js",
 ]
+extra_css = [
+    "stylesheets/admonition.css",
+]
 
 # [project.markdown_extensions.pymdownx.arithmatex]
 [markdown_extensions.pymdownx.arithmatex]

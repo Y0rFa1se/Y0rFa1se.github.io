@@ -5,6 +5,7 @@ site_author = "Y0rFa1se"
 site_url = "https://y0rfa1se.github.io/"
 repo_url = "https://github.com/Y0rFa1se/Y0rFa1se.github.io"
 repo_name = "Y0rFa1se/Y0rFa1se.github.io"
+edit_uri = "https://raw.githubusercontent.com/y0rfa1se/y0rfa1se.github.io/main/docs/"
 copyright = """
 Copyright &copy; 2026 The authors
 """
@@ -31,6 +32,7 @@ features = [
     "content.footnote.tooltips",
     "content.tabs.link",
     "content.tooltips",
+    "content.action.view",
     "navigation.footer",
     "navigation.indexes",
     "navigation.instant",

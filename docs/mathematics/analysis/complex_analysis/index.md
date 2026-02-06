@@ -1,5 +1,6 @@
 ---
+title: Complex Analysis
 icon: fontawesome/solid/info
 ---
 
-# Complex Analysis
+복소해석이라는 뜻

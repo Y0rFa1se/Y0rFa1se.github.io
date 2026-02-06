@@ -1,5 +1,6 @@
 ---
+title: Analysis
 icon: material/math-integral
 ---
 
-# Analysis
+해석이라는 뜻

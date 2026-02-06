@@ -1,5 +1,6 @@
 ---
+title: Linear Algebra
 icon: lucide/chart-column-increasing
 ---
 
-# Linear Algebra
+선형대수라는 뜻

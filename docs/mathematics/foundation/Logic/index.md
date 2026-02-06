@@ -1,5 +1,6 @@
 ---
+title: Logic
 icon: fontawesome/solid/not-equal
 ---
 
-# Logic
+수리논리라는 뜻

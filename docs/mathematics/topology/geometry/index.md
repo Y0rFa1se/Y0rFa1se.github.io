@@ -1,5 +1,6 @@
 ---
+title: Geometry
 icon: material/math-compass
 ---
 
-# Geometry
+기하라는 뜻

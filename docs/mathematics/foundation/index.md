@@ -1,5 +1,6 @@
 ---
+title: Foundation
 icon: fontawesome/solid/equals
 ---
 
-# Foundation
+수학기초론이라는 뜻

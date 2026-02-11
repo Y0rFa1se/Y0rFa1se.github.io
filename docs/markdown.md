@@ -101,8 +101,7 @@ $$
 
 $\alpha\alpha\alpha\alpha\alpha\alpha\alpha\alpha\alpha\alpha\alpha\alpha\alpha\alpha\alpha\alpha\alpha\alpha\alpha + \alpha\alpha\alpha\alpha\alpha\alpha\alpha\alpha\alpha\alpha\alpha\alpha\alpha\alpha\alpha\alpha\alpha+
 \alpha\alpha\alpha\alpha\alpha\alpha\alpha\alpha\alpha\alpha\alpha\alpha\alpha+ \alpha\alpha\alpha\alpha\alpha\alpha\alpha\alpha\alpha\alpha\alpha\alpha\alpha\alpha\alpha\alpha\alpha\alpha\alpha+\alpha\alpha\alpha\alpha\alpha\alpha\alpha\alpha\alpha\alpha\alpha\alpha\alpha\alpha\alpha\alpha\alpha+\alpha\alpha\alpha\alpha\alpha\alpha\alpha\alpha\alpha\alpha\alpha\alpha\alpha\alpha\alpha\alpha\alpha\alpha+\alpha\alpha\alpha\alpha\alpha+
-\alpha\alpha\alpha\alpha\alpha\alpha\alpha\alpha\alpha\alpha\alpha\alpha\alpha\alpha\alpha\alpha\alpha\alpha\alpha\alpha\alpha\alpha\alpha\alpha\alpha+\alpha\alpha\alpha\alpha\alpha+
-\alpha\alpha\alpha\alpha\alpha\alpha\alpha\alpha\alpha\alpha\alpha\alpha\alpha\alpha\alpha\alpha\alpha\alpha\alpha\alpha\alpha\alpha\alpha\alpha\alpha+\alpha\alpha\alpha\alpha\alpha\alpha\alpha\alpha\alpha\alpha\alpha\alpha\alpha\alpha\alpha\alpha\alpha\alpha\alpha\alpha\alpha\alpha\alpha\alpha\alpha\alpha+\alpha\alpha\alpha\alpha\alpha\alpha\alpha\alpha\alpha\alpha\alpha\alpha\alpha\alpha+\alpha\alpha\alpha\alpha\alpha\alpha\alpha\alpha\alpha\alpha\alpha\alpha\alpha\alpha+\alpha\alpha\alpha\alpha\alpha\alpha\alpha\alpha\alpha\alpha\alpha\alpha\alpha\alpha\alpha\alpha\alpha$
+\alpha\alpha\alpha\alpha\alpha\alpha\alpha\alpha\alpha\alpha\alpha+\alpha\alpha\alpha\alpha\alpha$
 
 inline $\alpha$ math
 
@@ -118,4 +117,22 @@ xychart-beta
 ??? note "graph (embed)"
     <iframe src="https://www.geogebra.org/graphing/dvz4un8v?embed" width="800" height="600" allowfullscreen style="border: 1px solid #e4e4e4;border-radius: 4px;" frameborder="0"></iframe>
 
-<iframe frameborder="0" style="width:100%;height:293px;" src="https://viewer.diagrams.net/?tags=%7B%7D&lightbox=1&highlight=0000ff&edit=_blank&layers=1&nav=1&dark=auto#G1dca1lONas_upvfbMBc9aqb81N6kCsuCv"></iframe>
+??? note ""
+    <iframe frameborder="0" style="width:100%;height:293px;" src="https://viewer.diagrams.net/?tags=%7B%7D&lightbox=1&highlight=0000ff&edit=_blank&layers=1&nav=1&dark=auto#G1dca1lONas_upvfbMBc9aqb81N6kCsuCv"></iframe>
+
+
+$$
+\begin{aligned}
+f(x) &= \int_{-\infty}^{\infty} \hat{f}(\xi) e^{2\pi i x \xi} \, d\xi \\
+&= \lim_{n \to \infty} \sum_{k=-n}^{n} \frac{1}{2\pi} \left( \alpha\alpha\alpha\alpha\alpha\alpha\alpha\alpha\alpha\alpha\alpha\alpha + \beta\beta\beta\beta\beta\beta\beta\beta\beta\beta\beta\beta \right) \Delta x \\
+& \quad + \sum_{j=1}^{m} \sqrt{x_j^2 + y_j^2 + \dots + z_j^2} \allowbreak + \text{This is a very long text to test if the line breaks correctly at the end of the container.}
+\end{aligned}
+$$
+
+$$
+\begin{CD}
+V \otimes (W \otimes Z) @>\alpha>> (V \otimes W) \otimes Z \\
+@VV id \otimes \beta V @VV \beta \otimes id V \\
+V \otimes (Z \otimes W) @>>\alpha> (V \otimes Z) \otimes W
+\end{CD}
+$$

@@ -2,5 +2,5 @@
 title: Algebra
 icon: lucide/diff
 ---
-
-대수라는 뜻
+- [Linear Algebra](./linear_algebra)
+- [Number Theory](./number_theory)

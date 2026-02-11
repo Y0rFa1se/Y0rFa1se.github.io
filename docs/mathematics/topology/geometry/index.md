@@ -2,5 +2,4 @@
 title: Geometry
 icon: material/math-compass
 ---
-
-기하라는 뜻
+아직 안씀 ㅎ

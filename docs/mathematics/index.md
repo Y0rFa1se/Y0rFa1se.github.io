@@ -1,7 +1,8 @@
 ---
+title: Mathematics
 icon: lucide/radical
 ---
-
-# Mathematics
-
-수학이라는 뜻
+- [Algebra](./algebra)
+- [Analysis](./analysis)
+- [Topology](./topology)
+- [Foundation](./foundation)

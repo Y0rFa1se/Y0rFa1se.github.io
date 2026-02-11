@@ -1,4 +1,10 @@
-# e(수정중)
+---
+title: e (수정중)
+description: euler's number in real field
+comments: true
+---
+
+전에 써놓은 글 서식 옮기는 중입니다
 
 ## Euler's Number $e$
 오일러 상수 $e$는 $\lim\limits_{n \rightarrow \infty} {(1 + \frac{1}{n})^n}$ 의 수렴값임이 아주 잘 알려져 있다.

@@ -2,5 +2,4 @@
 title: Logic
 icon: fontawesome/solid/not-equal
 ---
-
-수리논리라는 뜻
+아직 안씀 ㅎ

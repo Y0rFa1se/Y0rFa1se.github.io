@@ -1,6 +1,6 @@
 ---
 title: RSA
-description: RSA 암호화에 대한 설명
+description: RSA 암호화
 comments: true
 ---
 

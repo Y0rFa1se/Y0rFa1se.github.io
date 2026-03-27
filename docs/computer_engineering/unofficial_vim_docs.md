@@ -36,6 +36,8 @@ comments: true
 
 <kbd>i</kbd>/<kbd>a</kbd> : 현재 커서 앞/뒤에서 insert 모드로 변경
 
+<kbd>I</kbd>/<kbd>A</kbd> : 현재 라인 맨앞/뒤에서 insert 모드로 변경
+
 ### visual
 
 <kbd>v</kbd> : visual 모드로 변경
@@ -146,6 +148,28 @@ comments: true
 	<kbd>:</kbd> ```6,7s/bad/good``` : 6번 라인부터 7번 라인들에서 bad를 good으로 바꿈
 	
 	<kbd>:</kbd> ```s/opt/ion/[g/c/i/e]``` : 현재 라인에서 opt를 ion으로 바꿈 (g: 라인 내에서 찾은 부분 전부 대체, c: 바꾸기 전 확인, i: 대소문자 구분 없이, e: 에러 무시 (기본적으로 대체할 문자를 못찾으면 에러남, 매크로용 옵션))
+
+<kbd>:</kbd> ```norm``` : normal 모드 명령어 실행
+
+??? example
+	<kbd>:</kbd> ```5,9norm A;``` : 5번째 줄부터 9번째 줄까지 <kbd>A</kbd><kbd>;</kbd> 실행 (맨 뒤에 ```;``` 추가)
+	
+
+---
+
+## Example
+
+#### 5~9번째 줄 맨 앞에 ```//``` 추가해서 주석처리 하기
+
+##### 1. vim macro 이용
+
+1. <kbd>q</kbd><kbd>a</kbd><kbd>I</kbd><kbd>/</kbd><kbd>/</kbd><kbd>space</kbd><kbd>esc</kbd><kbd>j</kbd> : 줄 맨앞으로 이동해 ```// ``` 를 추가하고 normal 모드로 변경해 아랫줄로 내려가는 커맨드를 a에 저장
+2. 5번 줄로 이동해 <kbd>5</kbd><kbd>@</kbd><kbd>a</kbd> (a 매크로를 5번 반복 실행)
+
+##### 2. norm 명령어
+
+- <kbd>:</kbd> ```5,9norm I// ``` : (visual 모드로 선택하고 '<'> 로 지정해도 됨) 지정한 부분에 normal 모드에서 <kbd>I</kbd><kbd>/</kbd><kbd>/</kbd><kbd>space</kbd> 입력
+
 
 ---
 

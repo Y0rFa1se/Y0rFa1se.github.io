@@ -1,6 +1,6 @@
 ---
-title: 실압빔(메모용)
-description: 까먹을까봐 메모해두는 실전 압축 빔모션
+title: 실전 압축 빔모션 (메모용)
+description: 실압빔
 comments: true
 ---
 ## TIP

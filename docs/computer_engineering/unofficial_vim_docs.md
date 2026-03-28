@@ -5,7 +5,7 @@ comments: true
 ---
 ## TIP
 
-- vim의 거의 모든 커맨드는 **숫자를 앞에 입력**해 **반복실행**할 수 있다.
+- vim의 거의 모든 모션은 **숫자를 앞에 입력**해 **반복실행**할 수 있다.
 
 ??? example
 	<kbd>8</kbd><kbd>j</kbd> : 아래로 8칸 이동
@@ -115,6 +115,8 @@ comments: true
 ### edit
 
 <kbd>z</kbd><kbd>z</kbd> : 현재 커서 위치가 가운데로 오도록 라인 정렬
+
+<kbd>z</kbd><kbd>a</kbd>/<kbd>A</kbd> : scope 접기/펴기 토글 (<kbd>A</kbd> : 최상위 스코프 토글)
 
 <kbd>m</kbd></kbd>/<kbd>'</kbd> : 마크 표시 / 마크로 이동
 

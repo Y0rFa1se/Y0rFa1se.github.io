@@ -189,3 +189,11 @@ comments: true
 <kbd>H</kbd>/<kbd>L</kbd> : 버퍼 좌/우 이동
 
 <kbd>space</kbd><kbd>b</kbd><kbd>d</kbd>/<kbd>o</kbd> : 버퍼 닫기 (d: 현재 버퍼 닫기, o: 현재 버퍼 제외 전부 닫기)
+
+<kbd>space</kbd><kbd>c</kbd><kbd>f</kbd> : 코드 포매팅
+
+<kbd>space</kbd><kbd>x</kbd><kbd>x</kbd> : 에러 목록 보기 (<kbd>^</kbd><kbd>j</kbd>/<kdb>k</kdb> : 아래/위 창으로 이동)
+
+### command
+
+<kbd>:</kbd> ```venvselect``` : venv 선택

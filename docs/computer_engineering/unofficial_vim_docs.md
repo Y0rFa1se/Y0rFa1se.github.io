@@ -97,6 +97,8 @@ comments: true
 
 <kbd>%</kbd> : 대응되는 괄호가 있는 곳으로 이동
 
+<kbd>^</kbd><kbd>h</kbd>/<kbd>j</kbd>/<kbd>k</kbd>/<kbd>l</kbd> : 좌/하/상/우 화면으로 이동
+
 ### edit
 
 <kbd>></kbd> : indent 하나 추가 (<kbd><</kbd> : indent 하나 제거)
@@ -159,6 +161,14 @@ comments: true
 
 ---
 
+## Advanced
+
+### move
+
+<kbd>:</kbd> ```lua vim.lsp.buf.definition()``` : 현재 함수 정의로 이동
+
+---
+
 ## Example
 
 #### 5~9번째 줄 맨 앞에 ```//``` 추가해서 주석처리 하기
@@ -197,3 +207,4 @@ comments: true
 ### command
 
 <kbd>:</kbd> ```venvselect``` : venv 선택
+<kdb>:</kbd> ```sp/vs``` : split horizontal/vertical

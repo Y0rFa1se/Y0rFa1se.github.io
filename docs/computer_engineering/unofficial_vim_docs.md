@@ -159,13 +159,6 @@ comments: true
 	<kbd>:</kbd> ```5,9norm A;``` : 5번째 줄부터 9번째 줄까지 <kbd>A</kbd><kbd>;</kbd> 실행 (맨 뒤에 ```;``` 추가)
 	
 
----
-
-## Advanced
-
-### move
-
-<kbd>:</kbd> ```lua vim.lsp.buf.definition()``` : 현재 함수 정의로 이동
 
 ---
 
@@ -187,6 +180,12 @@ comments: true
 
 ## Lazyvim
 
+### move
+
+<kbd>:</kbd> ```lua vim.lsp.buf.definition()``` : 현재 함수 정의로 이동
+
+### etc
+
 <kbd>space</kbd><kbd>space</kbd> : 파일 이름 검색해서 새로운 버퍼(탭)로 열기
 
 <kbd>space</kbd><kbd>e</kbd> : 파일 탐색기 열기
@@ -207,4 +206,5 @@ comments: true
 ### command
 
 <kbd>:</kbd> ```venvselect``` : venv 선택
+
 <kdb>:</kbd> ```sp/vs``` : split horizontal/vertical

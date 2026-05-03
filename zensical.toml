@@ -10,12 +10,12 @@ copyright = """
 Copyright &copy; 2026 The authors
 """
 extra_javascript = [
-    "javascripts/mathjax.js",
+    "assets/javascripts/mathjax.js",
     "https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js",
 ]
 extra_css = [
-    "stylesheets/mathjax.css",
-    "stylesheets/admonition.css",
+    "assets/stylesheets/mathjax.css",
+    "assets/stylesheets/admonition.css",
 ]
 
 # [project.markdown_extensions.pymdownx.arithmatex]
@@ -25,8 +25,8 @@ generic = true
 [project.theme]
 language = "ko"
 name = "material"
-logo = "assets/favicon.png"
-favicon = "assets/favicon.png"
+logo = "assets/favicon/favicon.png"
+favicon = "assets/favicon/favicon.png"
 custom_dir = "overrides"
 features = [
     "announce.dismiss",

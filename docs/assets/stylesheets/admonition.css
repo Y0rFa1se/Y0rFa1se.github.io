@@ -1,0 +1,4 @@
+.md-typeset .admonition > :not(.admonition-title),
+.md-typeset details > :not(summary) {
+    font-size: 0.8rem;
+}
